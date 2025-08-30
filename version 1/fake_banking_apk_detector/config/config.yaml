@@ -1,0 +1,122 @@
+# Configuration for Fake Banking APK Detector
+
+app:
+  name: "Fake Banking APK Detector"
+  version: "1.0.0"
+  debug: true
+
+detector:
+  confidence_threshold: 0.7
+  max_file_size: 100  # MB
+  supported_formats: [".apk"]
+
+ml_model:
+  algorithm: "random_forest"
+  test_size: 0.2
+  random_state: 42
+  n_estimators: 100
+
+indian_banks:
+  - "State Bank of India"
+  - "HDFC Bank"
+  - "ICICI Bank"
+  - "Axis Bank"
+  - "Kotak Mahindra Bank"
+  - "Punjab National Bank"
+  - "Bank of Baroda"
+  - "Canara Bank"
+  - "Union Bank of India"
+  - "Indian Bank"
+  - "IDFC First Bank"
+  - "Yes Bank"
+  - "IndusInd Bank"
+  - "Federal Bank"
+  - "South Indian Bank"
+
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: "logs/detector.log"
+
+api:
+  host: "0.0.0.0"
+  port: 5000
+  upload_folder: "uploads"
+
+
+# Fake Banking APK Detector Configuration
+
+# Logging configuration
+logging:
+  level: INFO
+  file: logs/detector.log
+  format: '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+
+# Detection settings
+detector:
+  confidence_threshold: 0.5
+  enable_ml_detection: true
+  enable_signature_detection: true
+  combine_methods: true
+
+# APK Analysis settings
+apk_analysis:
+  max_file_size: 104857600  # 100MB
+  timeout: 300  # 5 minutes
+  extract_permissions: true
+  extract_activities: true
+  extract_services: true
+  extract_receivers: true
+  analyze_certificate: true
+  calculate_hashes: true
+
+# Feature extraction settings
+feature_extraction:
+  permission_features: true
+  api_features: true
+  structural_features: true
+  certificate_features: true
+  string_features: true
+  network_features: true
+
+# Machine Learning settings
+ml_classifier:
+  default_model: random_forest
+  model_path: data/models/
+  feature_scaling: true
+  cross_validation_folds: 5
+  test_size: 0.2
+  random_state: 42
+
+# Signature database settings
+signature_database:
+  legitimate_signatures: data/signatures/legitimate_banks.json
+  suspicious_patterns: data/signatures/suspicious_patterns.json
+  update_interval: 86400  # 24 hours in seconds
+
+# Banking institutions database
+banking_database:
+  banks_file: data/banks/known_banks.json
+  package_patterns: data/banks/package_patterns.json
+
+# File handling settings
+file_handling:
+  temp_directory: temp/
+  cleanup_temp_files: true
+  max_concurrent_analysis: 5
+
+# API settings
+api:
+  host: 0.0.0.0
+  port: 5000
+  debug: false
+  max_content_length: 104857600  # 100MB
+  upload_folder: uploads/
+
+# Security settings
+security:
+  enable_rate_limiting: true
+  max_requests_per_minute: 60
+  enable_file_validation: true
+  allowed_extensions: ['.apk']
+  scan_uploaded_files: true

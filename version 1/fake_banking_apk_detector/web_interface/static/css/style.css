@@ -1,0 +1,293 @@
+/* Custom styles for Fake Banking APK Detector */
+
+body {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.upload-area {
+    border: 2px dashed #dee2e6;
+    border-radius: 10px;
+    padding: 40px 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    background-color: #fff;
+}
+
+.upload-area:hover {
+    border-color: #007bff;
+    background-color: #f8f9ff;
+}
+
+.upload-area.dragover {
+    border-color: #007bff;
+    background-color: #e3f2fd;
+    transform: scale(1.02);
+}
+
+.card {
+    border: none;
+    border-radius: 15px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+}
+
+.card-header {
+    border-radius: 15px 15px 0 0 !important;
+}
+
+.btn {
+    border-radius: 25px;
+    padding: 10px 25px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.risk-critical {
+    background: linear-gradient(135deg, #dc3545, #c82333);
+    color: white;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 10px 0;
+}
+
+.risk-high {
+    background: linear-gradient(135deg, #fd7e14, #e55a00);
+    color: white;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 10px 0;
+}
+
+.risk-medium {
+    background: linear-gradient(135deg, #ffc107, #e0a800);
+    color: #212529;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 10px 0;
+}
+
+.risk-low {
+    background: linear-gradient(135deg, #28a745, #1e7e34);
+    color: white;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 10px 0;
+}
+
+.risk-very-low {
+    background: linear-gradient(135deg, #20c997, #17a2b8);
+    color: white;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 10px 0;
+}
+
+.result-item {
+    border-left: 4px solid #007bff;
+    padding: 15px;
+    margin: 10px 0;
+    background-color: #fff;
+    border-radius: 0 10px 10px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.result-item.fake {
+    border-left-color: #dc3545;
+}
+
+.result-item.legitimate {
+    border-left-color: #28a745;
+}
+
+.confidence-bar {
+    height: 8px;
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: #e9ecef;
+    margin: 5px 0;
+}
+
+.confidence-fill {
+    height: 100%;
+    transition: width 0.5s ease;
+}
+
+.confidence-high {
+    background: linear-gradient(90deg, #28a745, #20c997);
+}
+
+.confidence-medium {
+    background: linear-gradient(90deg, #ffc107, #fd7e14);
+}
+
+.confidence-low {
+    background: linear-gradient(90deg, #dc3545, #c82333);
+}
+
+.recommendation {
+    padding: 10px 15px;
+    margin: 5px 0;
+    border-radius: 8px;
+    border-left: 4px solid;
+}
+
+.recommendation.warning {
+    background-color: #fff3cd;
+    border-left-color: #ffc107;
+    color: #856404;
+}
+
+.recommendation.danger {
+    background-color: #f8d7da;
+    border-left-color: #dc3545;
+    color: #721c24;
+}
+
+.recommendation.success {
+    background-color: #d1edff;
+    border-left-color: #0dcaf0;
+    color: #055160;
+}
+
+.recommendation.info {
+    background-color: #cff4fc;
+    border-left-color: #0dcaf0;
+    color: #055160;
+}
+
+.batch-summary {
+    background: linear-gradient(135deg, #6f42c1, #e83e8c);
+    color: white;
+    border-radius: 15px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.progress {
+    height: 8px;
+    border-radius: 4px;
+}
+
+.spinner-border {
+    width: 3rem;
+    height: 3rem;
+}
+
+.navbar-brand {
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.display-4 {
+    font-weight: 300;
+}
+
+.lead {
+    font-size: 1.1rem;
+    color: #6c757d;
+}
+
+footer {
+    margin-top: auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .upload-area {
+        padding: 30px 15px;
+    }
+    
+    .display-4 {
+        font-size: 2rem;
+    }
+    
+    .card-body {
+        padding: 15px;
+    }
+}
+
+/* Animation for results */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.5s ease-out;
+}
+
+/* File list styling */
+.file-list {
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: #fff;
+}
+
+.file-item {
+    display: flex;
+    justify-content: between;
+    align-items: center;
+    padding: 8px 12px;
+    margin: 2px 0;
+    background-color: #f8f9fa;
+    border-radius: 6px;
+    font-size: 0.9rem;
+}
+
+.file-item .file-name {
+    flex-grow: 1;
+    margin-right: 10px;
+    word-break: break-all;
+}
+
+.file-item .file-size {
+    color: #6c757d;
+    font-size: 0.8rem;
+}
+
+/* Tooltip styling */
+.tooltip-inner {
+    background-color: #212529;
+    border-radius: 6px;
+}
+
+/* Loading overlay */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.loading-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}

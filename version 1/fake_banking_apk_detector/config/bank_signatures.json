@@ -1,0 +1,41 @@
+{
+  "legitimate_signatures": {
+    "sbi": {
+      "package_names": ["com.sbi.lotusintouch", "com.onmobile.android.sbi"],
+      "certificates": ["SHA256:A1:B2:C3:D4:E5:F6:..."],
+      "permissions": ["android.permission.INTERNET", "android.permission.ACCESS_NETWORK_STATE"],
+      "activities": ["com.sbi.lotusintouch.MainActivity"]
+    },
+    "hdfc": {
+      "package_names": ["com.snapwork.hdfc", "com.hdfcbank.payzapp"],
+      "certificates": ["SHA256:B2:C3:D4:E5:F6:A1:..."],
+      "permissions": ["android.permission.INTERNET", "android.permission.CAMERA"],
+      "activities": ["com.snapwork.hdfc.MainActivity"]
+    },
+    "icici": {
+      "package_names": ["com.csam.icici.bank.imobile", "com.icicibank.pockets"],
+      "certificates": ["SHA256:C3:D4:E5:F6:A1:B2:..."],
+      "permissions": ["android.permission.INTERNET", "android.permission.READ_SMS"],
+      "activities": ["com.csam.icici.bank.imobile.MainActivity"]
+    }
+  },
+  "suspicious_patterns": {
+    "fake_package_names": [
+      "com.fake.sbi",
+      "com.banking.hdfc",
+      "com.secure.icici",
+      "com.bank.axis.fake"
+    ],
+    "malicious_permissions": [
+      "android.permission.SEND_SMS",
+      "android.permission.READ_CONTACTS",
+      "android.permission.RECORD_AUDIO",
+      "android.permission.ACCESS_FINE_LOCATION"
+    ],
+    "suspicious_activities": [
+      "com.malware.activity",
+      "com.phishing.login",
+      "com.fake.banking"
+    ]
+  }
+}
